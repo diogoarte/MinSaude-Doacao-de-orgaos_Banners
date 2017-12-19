@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="custom.css">
+    </head>
+    <body>
+        <div id="banner">
+            <img src="01.jpg" alt="" id="i01">
+            <div id="relogio">
+                <img src="" id="horas1">
+                <img src="" id="horas2">
+                <img src="" id="doisPontos">
+                <img src="" id="minutos1">
+                <img src="" id="minutos2">
+            </div>
+            <img src="03.png" alt="" id="i03">
+            <img src="04.png" alt="" id="i04">
+            <img src="05.png" alt="" id="i05">
+            <img src="06.png" alt="" id="i06">
+            <img src="07.png" alt="" id="i07">
+            <div id="fundo">
+            </div>
+            <img src="08.png" alt="" id="i08">
+            <img src="09.png" alt="" id="i09">
+            <img src="10.png" alt="" id="i10">
+        </div>
+
+    </body>
+    <script src="https://cdn.00px.net/static/rocket.min.js"></script>
+    <script>
+        new ROCKET().setClickElement("banner");
+    </script>
+    <script>
+        function relogio() {
+            var data = new Date(), horas = data.getHours().toString(), minutos = data.getMinutes().toString(), segundos = data.getSeconds().toString();
+
+            horas <= 9 ? horas = "0" + horas : null
+            minutos <= 9 ? minutos = "0" + minutos : null
+            segundos <= 9 ? segundos = "0" + segundos : null
+
+            document.getElementById("horas1").src = 'r-0' + horas[0] + '.png'
+            document.getElementById("horas2").src = 'r-0' + horas[1] + '.png'
+            document.getElementById("doisPontos").src = 'r-11.png'
+            document.getElementById("minutos1").src = 'r-0' + minutos[0] + '.png'
+            document.getElementById("minutos2").src = 'r-0' + minutos[1] + '.png'
+
+            setTimeout("relogio()",1000)
+        }
+       relogio();
+
+
+       
+    </script>
+    <script type="text/javascript" src="animation.min.js"></script>
+    <script type="text/javascript" src="custom.js"></script>
+</html>
